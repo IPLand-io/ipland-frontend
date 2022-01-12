@@ -72,7 +72,6 @@ export default {
         "main-show": this.display,
         "main-hide": !this.display,
         inner: this.inner,
-        main_dark: this.isDark,
       };
     },
     mainStyle: function () {
@@ -83,7 +82,6 @@ export default {
       };
     },
     ...mapGetters({
-      isDark: "global/isDark",
       accountName: "account/getAccountName",
     }),
   },

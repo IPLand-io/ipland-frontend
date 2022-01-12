@@ -328,7 +328,6 @@ export const format_number = (number, decimals = 0, trailing_zeros = true) => {
 
 export const getFullNum = (num, precision) => {
   if (isNaN(num)) {
-    console.log(1111111);
     return num;
   }
   if (precision && precision != 0) num = num / Math.pow(10, precision);

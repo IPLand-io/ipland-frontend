@@ -7,7 +7,6 @@ export const LOGOUT = 'account/LOGOUT'
 
 export const SET_LOADING = 'global/SET_LOADING'
 
-
 export const SET_DEVICE_TYPE = 'global/SET_DEVICE_TYPE'
 
 

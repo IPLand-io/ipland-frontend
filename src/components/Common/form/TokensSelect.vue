@@ -31,7 +31,7 @@ export default {
     };
   },
   created() {
-    this.options = config.select_tokens; //[{symbol:this.$t('Please select a Token'),address:""}].concat(config.select_tokens);
+    this.options = config.select_tokens;
   },
   methods: {
     selChange(v) {
@@ -48,7 +48,6 @@ export default {
     border: 0;
     font-size: 0.32rem;
     padding-left: 0;
-    // padding-right: 0.3em;
   }
 }
 </style>

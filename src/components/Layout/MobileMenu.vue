@@ -40,15 +40,6 @@
           </div>
         </div>
       </el-menu-item>
-      <!-- <el-menu-item index="5">
-        <div class="item">
-          <div class="title">About</div>
-          <div class="intro">Details about the test ipland project</div>
-        </div></el-menu-item
-      > -->
-      <!-- <el-menu-item index="6" v-if="!isPC && accountName">
-        {{ $t("nav_logout") }}
-      </el-menu-item> -->
       <el-menu-item index="5"> </el-menu-item>
     </el-menu>
   </nav>
@@ -81,23 +72,16 @@ export default {
     ...mapGetters({
       accountName: "account/getAccountName",
       isPC: "global/isPC",
-      isDark: "global/isDark",
-      gTheme: "global/gTheme",
     }),
   },
   mounted() {},
   methods: {
     menuSelect(index, indexPath) {
       let path = "/official" + this.paths[index];
-      // if (index == "6") {
-      //   this.logout();
-      //   return;
-      // }
       if (index == "2") {
         // window.open("https://ipland.gitbook.io/ipland-eth/")
         return;
       }
-
       this.$router.push({ path });
     },
     openUrl(event) {

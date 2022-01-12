@@ -36,23 +36,16 @@ const getters = {
     }
     return "";
   },
-  getAccountId: ({ account }) => {
-    return account ? account.account_id : "";
-  },
   getTotalBalance: ({ balances }) => {
     return _getTotalBalance(balances);
   },
-
-
   getBalances: state => state.balances,
   initOk: state => state.initOk,
   accountsData: state => state.accountsData
 }
 const actions = {
-
   setAccount: ({ commit, state, dispatch }, account) => {
     state.initOk = true;
-    //  console.log('account',account);
     if (account.account_name) {
       localStorage.setItem("account_name", account.account_name);
     }

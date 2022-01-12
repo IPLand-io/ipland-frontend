@@ -10,16 +10,12 @@ const initialState = {
   isPC: true,
   winWidth: 0,
   initOk: false,
-  theme: "day",
-  web3: null,
-  isTool: false,
+  web3: null
 };
 const getters = {
   getLoading: (state) => state.loading,
   isPC: (state) => state.isPC,
   winWidth: state => state.winWidth,
-  isDark: (state) => state.theme == "dark",
-  gTheme: (state) => state.theme,
   web3: (state) => state.web3,
 };
 const actions = {
@@ -30,7 +26,7 @@ const actions = {
     // dispatch("setHtmlFS");
     const setFontSize = () => {
       commit(types.SET_DEVICE_TYPE);
-      dispatch("setHtmlFS", state.isTool);
+      dispatch("setHtmlFS");
     }
     setFontSize();
 
@@ -42,28 +38,18 @@ const actions = {
       false
     );
   },
-  setHtmlFS: ({ state }, isTool = false) => {
-    state.isTool = isTool;
+  setHtmlFS: ({ state }) => {
     const win_w = window.innerWidth;
     state.winWidth = win_w;
 
     let font_size_value = win_w / 23.8;
     let min_value = 46;
-    if (isTool) {
-      min_value = 68;
-      if (win_w < 768) {
-        font_size_value = win_w / 4.14;
-      }
-    }
     font_size_value = font_size_value < min_value ? min_value : font_size_value;
     document.documentElement.style.fontSize = font_size_value + "px";
     var div_global_loading = document.querySelector(".div_loading_c");
     div_global_loading &&
       div_global_loading.remove &&
       div_global_loading.remove();
-  },
-  setTheme: ({ state }, theme) => {
-    state.theme = theme;
   },
   setLoading: (
     { commit, rootGetters },

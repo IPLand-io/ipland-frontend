@@ -118,7 +118,6 @@ export default {
       placeholder: "",
       is_dark_theme: true,
       display: false,
-      // drawerWidth: "160px",
       drawerWidth: "100%",
       visible_router_view: true,
       isApp: false,
@@ -128,7 +127,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      accountName: "account/getAccountName",
       g_loading: "global/getLoading",
       isPC: "global/isPC",
       web3: "web3Modal/web3",
