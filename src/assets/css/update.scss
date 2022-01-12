@@ -1,0 +1,36 @@
+body{
+    .el-menu{
+        border-right: 0;
+        .el-submenu__title{
+            height: 40px;
+            line-height: 40px;
+            background: rgba(255, 255, 255, 0.03) !important;
+            .el-icon-arrow-down{
+                color:#fff;
+            }
+        }
+        .el-submenu{
+            .el-menu-item{
+                height: 40px;
+                line-height: 40px;
+            }
+            .is-active{
+                background: rgba(255, 255, 255, 0.06) !important;
+                border-left: 3px solid $color-a;
+            }
+        }
+    }
+    
+    div.div_page_index{
+        .uk-button-primary{
+            background-image: linear-gradient(to right, #5660ff, #8a5efb) !important;
+            color:#fff;
+            border: 0;
+
+            &:hover{
+                background-image: linear-gradient(to right, #838afc, #9168f8) !important;
+            }
+        }
+
+    }
+}

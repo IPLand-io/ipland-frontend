@@ -1,0 +1,18 @@
+@import "./assets/css/variable";
+
+$--color-primary: $theme-color;
+$--message-success-color: $theme-color;
+$--color-success-light:$theme-color;
+$--color-success-lighter:$color-background-d;
+// $--color-text-regular:"#000";
+// $--color-text-primary:$color-text;
+$--background-color-base:$color-black-backgroud-l;
+$--table-header-background:$color-background-d;
+// $--table-border:#000;
+$--border-color-lighter:$color-background-d;
+$--button-default-color:$color-background-d;
+$--pagination-button-color:$theme-color;
+$--input-color:$color-text-black;
+$--font-path: '../node_modules/element-ui/lib/theme-chalk/fonts';
+
+@import "../node_modules/element-ui/packages/theme-chalk/src/index";

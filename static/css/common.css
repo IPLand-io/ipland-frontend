@@ -1,0 +1,30 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+ body,html,p{box-sizing:border-box;margin:0;padding:0;height:100%;border:0;font-weight:400;font-size:100%;}
+ p{height: auto;width:auto;}
+ h1,h2,h3,h4,h5,div,ul{margin: 0; padding: 0;}
+ article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block;}
+ body{font-size:.14rem;font-family:Microsoft YaHei;line-height:1;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:transparent;}
+ blockquote,q{quotes:none;}
+ blockquote:after,blockquote:before,q:after,q:before{content:none;}
+ table{border-collapse:collapse;border-spacing:0;}
+ a{color:#7e8c8d;text-decoration:none;-webkit-backface-visibility:hidden;}
+ li{list-style:none;}
+ ::-webkit-scrollbar{width:5px;height:5px;}
+ ::-webkit-scrollbar-track-piece{-webkit-border-radius:6px;background-color:rgba(0,0,0,.2);}
+ ::-webkit-scrollbar-thumb:vertical{height:5px;-webkit-border-radius:6px;background-color:rgba(125,125,125,.7);}
+ ::-webkit-scrollbar-thumb:horizontal{width:5px;-webkit-border-radius:6px;background-color:rgba(125,125,125,.7);}
+
+ /**ipland_common.css*/
+.cf{clear:both;}
+select{  appearance:none;  -moz-appearance:none;  -webkit-appearance:none;  background: #fff; }
+input,select{ outline: none; border:0; }
+.activeBtn:active{opacity: 0.4; }
+.iplandBtn:active{ opacity: 0.4;  }/*-webkit-tap-highlight-color:transparent;*/
+.overlay{  width: 100%; position: absolute;  top:0; bottom: 0; z-index: 10; background-color: #000; opacity: 0.3; }
+
+.glyphicon-chevron-right{color:#D6D6D6;}
+
+.playerItem{background:#000;}

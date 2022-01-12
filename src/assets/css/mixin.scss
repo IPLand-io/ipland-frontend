@@ -1,0 +1,56 @@
+
+@import "./variable";
+@function torem($value) {
+  @return $value/100+rem;
+}
+@mixin font_size($size){
+  @include font-dpr($size);
+}
+
+
+
+//@include bg_color();
+@mixin bg_color(){
+  [data-theme="dark"] & {
+    background-color:$background-color-dark;
+  }
+  [data-theme="day"] & {
+    background-color:$background-color-day;
+  }
+}
+
+@mixin bg_color_l(){
+    [data-theme="dark"] & {
+      background-color:$color-background-l-dark;
+    }
+    [data-theme="day"] & {
+      background-color:$color-background-l-day;
+    }
+}
+
+@mixin color-background-d(){
+    [data-theme="dark"] & {
+      background-color:$color-background-d-dark;
+    }
+    [data-theme="day"] & {
+      background-color:$color-background-d-day;
+    }
+}
+
+@mixin borderCreator($direction,$px:1px) {
+    [data-theme="dark"] & {
+        @if $direction!= "" {
+          border-#{$direction}: $px solid $color-background-l-dark;
+        } @else {
+            border: $px solid $color-background-l-dark;
+        }
+    }
+
+    [data-theme="day"] & {
+        @if $direction!= "" {
+          border-#{$direction}: $px solid $color-background-l-day;
+        } @else {
+            border: $px solid $color-background-l-day;
+        }
+    }
+}
