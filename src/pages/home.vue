@@ -117,6 +117,33 @@
           </div>
         </div>
       </div>
+      <div class="token bg-cover">
+        <img src="../assets/img/token.png" />
+        <div class="row">
+          <div class="col-sm-4 left">
+            <div class="item">
+              <p class="name">Total token supply</p>
+              <p class="value">100,000,000,000</p>
+            </div>
+            <div class="item">
+              <p class="name">Initial market cap</p>
+              <p class="value">${{ $config.market_cap }}</p>
+            </div>
+            <div class="item">
+              <p class="name">Public sale price</p>
+              <p class="value">${{ $config.sale_price }}</p>
+            </div>
+          </div>
+          <!-- <div class="col-sm-1"></div> -->
+
+          <div class="col-sm-8 right">
+            <!-- <div id="token_chart">
+
+                    </div> -->
+            <img src="../assets/img/token_pie.png" />
+          </div>
+        </div>
+      </div>
       <Footer></Footer>
     </div>
   </div>
@@ -275,6 +302,56 @@ export default {
 
       .DEFI_div {
         margin-top: 1.1rem;
+      }
+    }
+
+    .token {
+      background-image: url(../assets/img/token_bg.png);
+      padding: 1rem 0 0.4rem;
+      > img {
+        margin-bottom: 0.56rem;
+      }
+      .row {
+        width: 14.4rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        .left {
+          .item {
+            margin-bottom: 0.48rem;
+            p {
+              text-align: left;
+            }
+            .name {
+              font-size: 0.24rem;
+              font-weight: 400;
+              color: rgba(255, 255, 255, 0.7);
+              line-height: 0.33rem;
+              letter-spacing: 1px;
+            }
+            .value {
+              font-size: 0.54rem;
+              color: #ffffff;
+              line-height: 0.76rem;
+              letter-spacing: 2px;
+            }
+          }
+        }
+        .right {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          img {
+            width: 7.6rem;
+          }
+          #token_chart {
+            width: 100%;
+            height: 5.6rem;
+            position: relative;
+            top: -0.4rem;
+            right: -14%;
+          }
+        }
       }
     }
   }
