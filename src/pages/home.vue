@@ -1,6 +1,65 @@
 <template>
   <div class="page-home">
     <div class="div-body">
+      <div class="buy-list-box">
+        <div class="tab">
+          <OMenu :menus="menus"></OMenu>
+        </div>
+        <div
+          class="list"
+          v-loading="loading"
+          element-loading-spinner="el-icon-loading"
+          element-loading-background="rgba(0, 0, 0, 0.8)"
+        >
+          <div class="item" v-for="(item, index) in tableData" :key="item.id">
+            <div class="left">
+              <span>
+                {{ index + 1 + (page - 1) * 10 }}
+              </span>
+              <a :href="`https://twitter.com/${item.userName}`" target="_bank">
+                <Avatar :url="item.twitterAvatar"></Avatar>
+                <span>
+                  {{ item.userName }}
+                </span>
+                <div
+                  class="circle"
+                  :style="{ background: index % 2 ? '#FFA842' : '#4274FF' }"
+                ></div>
+              </a>
+            </div>
+
+            <div class="right flex_center">
+              <span class="span-price">$ {{ item.coinPrice }}</span>
+              <img src="../assets/img/buy_list/buy.png" @click="$develop" />
+              <img src="../assets/img/buy_list/farm.png" @click="$develop" />
+            </div>
+          </div>
+          <empty v-if="!tableData.length" />
+        </div>
+
+        <div class="footer">
+          <el-pagination
+            @current-change="pageChange"
+            layout="prev,pager,next"
+            :total="total"
+            :page-size="10"
+            :pager-count="5"
+            :current-page.sync="page"
+          >
+          </el-pagination>
+          <div class="div-go-page">
+            <input
+              type="text"
+              v-model="input_page"
+              @keyup.enter="page = Number(input_page)"
+            />
+            <img
+              @click="page = Number(input_page)"
+              src="../assets/img/buy_list/go_page.png"
+            />
+          </div>
+        </div>
+      </div>
       <div class="open-protocol-ecosystem bg-cover">
         <img src="../assets/img/ip_farming/title.png" style="width: 2.8rem" />
         <div class="list row">
@@ -190,11 +249,24 @@
 
 <script>
 import Footer from "components/Layout/Footer.vue";
-
+import OMenu from "components/Layout/OMenu.vue";
+import Avatar from "components/Common/Avatar.vue";
 export default {
   name: "app",
   components: {
     Footer,
+    OMenu,
+    Avatar,
+  },
+  data() {
+    return {
+      menus: ["Twitter", "YouTube"],
+      total: 120,
+      page: 1,
+      input_page: "",
+      loading: false,
+      tableData: [],
+    };
   },
 };
 </script>
@@ -204,6 +276,111 @@ export default {
 .page-home {
   text-align: center;
   .div-body {
+    .buy-list-box {
+      /* max-width: torem(1440); */
+      background-image: url(../assets/img/buy_list/bg.png);
+      background-size: cover;
+      .tab {
+        padding: 0.2rem 0;
+        .OMenu {
+          height: 0.8rem;
+          .div-border {
+            bottom: -0.1rem;
+          }
+        }
+      }
+
+      .btn {
+        font-size: 0.36rem;
+      }
+
+      .list {
+        width: torem(1440);
+        margin: 0 auto;
+        background: linear-gradient(
+          180deg,
+          rgba(119, 80, 198, 0) 0%,
+          rgba(119, 80, 198, 0.12) 48%,
+          rgba(119, 80, 198, 0) 100%
+        );
+        border-radius: 0.2rem;
+        border: 1px solid rgba(119, 80, 198, 0.52);
+        padding: 0 0.46rem;
+        margin-top: 0.3rem;
+        .item {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.2rem 0;
+          border-bottom: 1px solid rgba(176, 155, 246, 0.14);
+          .left {
+            display: flex;
+            align-items: center;
+            a {
+              display: flex;
+              align-items: center;
+            }
+            span {
+              color: #e3e3e3;
+              font-size: 0.34rem;
+              display: inline-block;
+              min-width: 30px;
+            }
+            .avatar-c {
+              margin: 0 0.2rem;
+            }
+
+            .circle {
+              border: 0.06rem solid #fff;
+              width: 0.2rem;
+              height: 0.2rem;
+              border-radius: 50%;
+              margin-left: 0.14rem;
+              top: 0.02rem;
+              position: relative;
+            }
+          }
+          .right {
+            .span-price {
+              font-size: 0.34rem;
+              font-weight: 600;
+              color: #bca6f9;
+              margin-right: 0.3rem;
+            }
+            img {
+              width: 1.2rem;
+              margin: 0 0.06rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .footer {
+        padding: 0.3rem 0 0.46rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .div-go-page {
+          width: 0.84rem;
+          height: 0.4rem;
+          background: rgba(255, 255, 255, 0.19);
+          border-radius: 0.2rem;
+          display: flex;
+          align-items: center;
+          margin-left: 0.22rem;
+          input {
+            background: transparent;
+            width: 0.5rem;
+            padding: 0 0.06rem 0 0.12rem;
+            color: #fff;
+          }
+          img {
+            cursor: pointer;
+            width: 0.34rem;
+          }
+        }
+      }
+    }
     a {
       text-decoration-line: none;
     }
