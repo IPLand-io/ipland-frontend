@@ -5,67 +5,64 @@
         <div class="tab">
           <OMenu :menus="menus"></OMenu>
         </div>
-        <div
-          class="list"
-          v-loading="loading"
-          element-loading-spinner="el-icon-loading"
-          element-loading-background="rgba(0, 0, 0, 0.8)"
-        >
-          <div class="item" v-for="(item, index) in tableData" :key="item.id">
+        <div class="list"
+             v-loading="loading"
+             element-loading-spinner="el-icon-loading"
+             element-loading-background="rgba(0, 0, 0, 0.8)">
+          <div class="item"
+               v-for="(item, index) in tableData"
+               :key="item.id">
             <div class="left">
               <span>
                 {{ index + 1 + (page - 1) * 10 }}
               </span>
-              <a :href="`https://twitter.com/${item.userName}`" target="_bank">
+              <a :href="`https://twitter.com/${item.userName}`"
+                 target="_bank">
                 <Avatar :url="item.twitterAvatar"></Avatar>
                 <span>
                   {{ item.userName }}
                 </span>
-                <div
-                  class="circle"
-                  :style="{ background: index % 2 ? '#FFA842' : '#4274FF' }"
-                ></div>
+                <div class="circle"
+                     :style="{ background: index % 2 ? '#FFA842' : '#4274FF' }"></div>
               </a>
             </div>
 
             <div class="right flex_center">
               <span class="span-price">$ {{ item.coinPrice }}</span>
-              <img src="../assets/img/buy_list/buy.png" @click="$develop" />
-              <img src="../assets/img/buy_list/farm.png" @click="$develop" />
+              <img src="../assets/img/buy_list/buy.png"
+                   @click="$develop" />
+              <img src="../assets/img/buy_list/farm.png"
+                   @click="$develop" />
             </div>
           </div>
           <empty v-if="!tableData.length" />
         </div>
 
         <div class="footer">
-          <el-pagination
-            @current-change="pageChange"
-            layout="prev,pager,next"
-            :total="total"
-            :page-size="10"
-            :pager-count="5"
-            :current-page.sync="page"
-          >
+          <el-pagination @current-change="pageChange"
+                         layout="prev,pager,next"
+                         :total="total"
+                         :page-size="10"
+                         :pager-count="5"
+                         :current-page.sync="page">
           </el-pagination>
           <div class="div-go-page">
-            <input
-              type="text"
-              v-model="input_page"
-              @keyup.enter="page = Number(input_page)"
-            />
-            <img
-              @click="page = Number(input_page)"
-              src="../assets/img/buy_list/go_page.png"
-            />
+            <input type="text"
+                   v-model="input_page"
+                   @keyup.enter="page = Number(input_page)" />
+            <img @click="page = Number(input_page)"
+                 src="../assets/img/buy_list/go_page.png" />
           </div>
         </div>
       </div>
       <div class="open-protocol-ecosystem bg-cover">
-        <img src="../assets/img/ip_farming/title.png" style="width: 2.8rem" />
+        <img src="../assets/img/ip_farming/title.png"
+             style="width: 2.8rem" />
         <div class="list row">
           <div class="col-sm-4">
             <div class="item-box bg-cover">
-              <img class="small_img" src="../assets/img/ip_farming/item1.png" />
+              <img class="small_img"
+                   src="../assets/img/ip_farming/item1.png" />
 
               <p class="small_p">
                 A unique CryptoID-NFT is minted once a creator installs IPland
@@ -75,7 +72,8 @@
           </div>
           <div class="col-sm-4">
             <div class="item-box bg-cover">
-              <img class="small_img" src="../assets/img/ip_farming/item2.png" />
+              <img class="small_img"
+                   src="../assets/img/ip_farming/item2.png" />
               <p class="small_p">
                 Fans get IPS （fragment of the CryptoID-NFT）on IP Twitter with
                 IPland.
@@ -84,7 +82,8 @@
           </div>
           <div class="col-sm-4">
             <div class="item-box bg-cover">
-              <img class="small_img" src="../assets/img/ip_farming/item3.png" />
+              <img class="small_img"
+                   src="../assets/img/ip_farming/item3.png" />
               <p class="small_p">
                 Stake IPS on the IP Twitter pool. Owner and IP both earn a split
                 of the staking reward
@@ -107,10 +106,8 @@
           <div class="row DEFI_div eliminate">
             <div class="col-sm-3 col-xs-6">
               <div class="DEFI_group">
-                <img
-                  class="DEFI_img"
-                  src="../assets/img/our_strengths/our_item_1.png"
-                />
+                <img class="DEFI_img"
+                     src="../assets/img/our_strengths/our_item_1.png" />
                 <p class="small_p DEFI_p">
                   Financialized social influence through CONFT hunting
                 </p>
@@ -118,10 +115,8 @@
             </div>
             <div class="col-sm-3 col-xs-6">
               <div class="DEFI_group">
-                <img
-                  class="DEFI_img"
-                  src="../assets/img/our_strengths/our_item_2.png"
-                />
+                <img class="DEFI_img"
+                     src="../assets/img/our_strengths/our_item_2.png" />
                 <p class="small_p DEFI_p">
                   Easy to develop new social app extensions
                 </p>
@@ -129,19 +124,15 @@
             </div>
             <div class="col-sm-3 col-xs-6">
               <div class="DEFI_group">
-                <img
-                  class="DEFI_img"
-                  src="../assets/img/our_strengths/our_item_3.png"
-                />
+                <img class="DEFI_img"
+                     src="../assets/img/our_strengths/our_item_3.png" />
                 <p class="small_p DEFI_p">User-controlled data ownership</p>
               </div>
             </div>
             <div class="col-sm-3 col-xs-6">
               <div class="DEFI_group">
-                <img
-                  class="DEFI_img"
-                  src="../assets/img/our_strengths/our_item_4.png"
-                />
+                <img class="DEFI_img"
+                     src="../assets/img/our_strengths/our_item_4.png" />
                 <p class="small_p DEFI_p">Mature web3.0 service operation</p>
               </div>
             </div>
@@ -203,8 +194,10 @@
           </div>
         </div>
       </div>
-      <div id="road-map" class="open-protocol-ecosystem road-map bg-cover">
-        <img src="../assets/img/roadmap.png" style="width: 2.8rem" />
+      <div id="road-map"
+           class="open-protocol-ecosystem road-map bg-cover">
+        <img src="../assets/img/roadmap.png"
+             style="width: 2.8rem" />
         <div class="list row">
           <div class="col-sm-4">
             <div class="item-box bg-cover">
@@ -258,7 +251,7 @@ export default {
     OMenu,
     Avatar,
   },
-  data() {
+  data () {
     return {
       menus: ["Twitter", "YouTube"],
       total: 120,
@@ -268,11 +261,16 @@ export default {
       tableData: [],
     };
   },
+  methods: {
+    pageChange (page) {
+      this.page = page;
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-@import "~@assets/css/mixin.scss";
+@import '~@assets/css/mixin.scss';
 .page-home {
   text-align: center;
   .div-body {
