@@ -261,12 +261,40 @@ export default {
       tableData: [],
     };
   },
+  mounted () {
+    //this.initChart();
+    this.loadTable();
+  },
   methods: {
     pageChange (page) {
       this.page = page;
+    },
+    loadTable () {
+      this.loading = true;
+      this.$smAjax({
+        api: `/users`,
+        data: {
+          page: this.page,
+          pageSize: 10,
+        },
+        method: "get",
+        loading: false,
+        app: this,
+        toast: false,
+      }).then((res) => {
+        this.loading = false;
+        if (res.code == 200) {
+          const { content, totalElements } = res.data;
+          content.forEach((item) => {
+            item.coinPrice = format_number(item.coinPrice, 2);
+          });
+          this.tableData = content;
+          this.total = totalElements;
+        }
+      });
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
