@@ -10,6 +10,10 @@ export default [
       {
         path: "",
         component: (resolve) => require(["./pages/Home.vue"], resolve),
+      },
+      {
+        path: "how-to-use",
+        component: (resolve) => require(["./pages/howToUse.vue"], resolve),
       }
     ]
   }
