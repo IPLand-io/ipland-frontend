@@ -14,6 +14,10 @@ export default [
       {
         path: "how-to-use",
         component: (resolve) => require(["./pages/howToUse.vue"], resolve),
+      },
+      {
+        path: "jobs",
+        component: (resolve) => require(["./pages/Jops.vue"], resolve),
       }
     ]
   }
