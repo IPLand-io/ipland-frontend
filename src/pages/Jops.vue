@@ -46,3 +46,64 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" >
+.Jops {
+  height: 100%;
+
+  .box {
+    width: 14.4rem;
+    margin: 0 auto;
+    .h-top {
+      text-align: center;
+      margin-bottom: 0.6rem;
+      img {
+        width: 2.66rem;
+        margin-bottom: 0.2rem;
+      }
+      p {
+        font-size: 0.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 0.4rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0;
+      }
+    }
+    .list {
+      > div {
+        text-align: center;
+        margin: 0.36rem 0;
+        img {
+          /* width: 3.3rem; */
+          height: 2.78rem;
+        }
+      }
+    }
+  }
+
+  .div-box-1 {
+    // background-image: url(../assets/img/jobs/bg_1.png);
+    padding-bottom: 0.7rem;
+    padding-top: 1.1rem;
+  }
+  .div-box-2 {
+    background-image: url(../assets/img/jobs/bg_2.png);
+    padding: 1.24rem 0;
+    .box .h-top {
+      margin-bottom: 0;
+      p {
+        width: 7.9rem;
+        height: 1rem;
+        font-size: 0.3rem;
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 0.5rem;
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+</style>
+
