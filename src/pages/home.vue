@@ -244,6 +244,8 @@
 import Footer from "components/Layout/Footer.vue";
 import OMenu from "components/Layout/OMenu.vue";
 import Avatar from "components/Common/Avatar.vue";
+import { format_number } from "../common/js/common";
+
 export default {
   name: "app",
   components: {
@@ -419,7 +421,7 @@ export default {
       padding: 0.8rem 0 0.4rem;
       .list {
         margin: torem(30) auto 0;
-        /* width: 17.4rem; */
+        width: 17.4rem;
         .item-box {
           width: torem(338);
           // height: torem(338);

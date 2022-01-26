@@ -21,8 +21,11 @@
           <div class="content">
             <div class="left">
               <p>Install IPLand</p>
-              <img @click="$develop"
-                   src="../assets/img/how_to_use/btn.png" />
+              <a :href="$config.ipland_down_url"
+                 target="_blank">
+                <img src="../assets/img/how_to_use/btn.png" />
+              </a>
+
             </div>
             <div class="right">
               <img style="height:1.24rem;margin-left:0.1rem"
